@@ -1,15 +1,8 @@
 package bayes.NaiveBayes;
 
-import java.util.Random;
-
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
-import weka.classifiers.lazy.IBk;
-import weka.core.ChebyshevDistance;
-import weka.core.EuclideanDistance;
 import weka.core.Instances;
-import weka.core.ManhattanDistance;
-import weka.core.SelectedTag;
 
 public class Classifier {
 	
