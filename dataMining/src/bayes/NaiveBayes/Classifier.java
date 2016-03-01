@@ -1,5 +1,7 @@
 package bayes.NaiveBayes;
 
+import java.util.Random;
+
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.NaiveBayes;
 import weka.core.Instances;
@@ -19,7 +21,9 @@ public class Classifier {
 								
 		evaluator = new Evaluation(data);	
 		
-		int trainSize = (int) Math.round(data.numInstances() * 0.7);
+		// randomizar con 1, como en MORE OPTIONS -> Random seed for XVal / % Split = 1 en Weka GUI
+		data.randomize(new Random(1));
+		int trainSize = (int) Math.round(data.numInstances() * 0.66);
 		int testSize = data.numInstances() - trainSize;
 		
 		Instances train = new Instances(data, 0, trainSize);
@@ -27,7 +31,7 @@ public class Classifier {
 		
 		// Aprender con el 70% de las instancias (train)
 		// creando el clasificador con el algoritmo Naive Bayes.
-		estimador.buildClassifier(train);
+		estimador.buildClassifier(train);	
 		
 		// Dejar que prediga la clase estimada por el modelo para cada instancia del test
 		// y así después podremos comparar la clase real y la estimada
@@ -36,14 +40,6 @@ public class Classifier {
 		System.out.println(evaluator.toSummaryString());
 		System.out.println(evaluator.toClassDetailsString());
 		System.out.println(evaluator.toMatrixString());
-		
-		double predictions[] = new double[test.numInstances()];
-		
-		// Recorrer todas las instancias
-		for (int i = 0; i < test.numInstances(); i++) {
-			predictions[i] = evaluator.evaluateModelOnceAndRecordPrediction(estimador, test.instance(i));
-			//System.out.println(predictions[i]);
-		}
 					
 	}
 
