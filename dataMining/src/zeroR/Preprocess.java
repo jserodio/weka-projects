@@ -1,7 +1,10 @@
 package zeroR;
 
+import weka.attributeSelection.CfsSubsetEval;
+import weka.attributeSelection.Ranker;
 import weka.core.Instances;
 import weka.filters.Filter;
+import weka.filters.supervised.attribute.AttributeSelection;
 import weka.filters.unsupervised.attribute.Normalize;
 
 public class Preprocess {
@@ -22,19 +25,26 @@ public class Preprocess {
 	public Instances filtrar(Instances data) throws Exception{
 //		/////////////////////////////////////////////////////////////		
 //		// 2. FEATURE SUBSET SELECTION		
-//		AttributeSelection filter= new AttributeSelection();
+//		AttributeSelection filter = new AttributeSelection();
 //		CfsSubsetEval eval = new CfsSubsetEval();
-//		BestFirst search=new BestFirst();
 //		filter.setEvaluator(eval);
+//		Ranker search = new Ranker();
 //		filter.setSearch(search);
-//		filter.setInputFormat(data);
 //		// 2.1 Get new data set with the attribute sub-set
 //		Instances newData = Filter.useFilter(data, filter);
 
-		// Filtro normalizar atributos
-		Normalize filter = new Normalize();
+		AttributeSelection filter = new AttributeSelection();
+		CfsSubsetEval eval = new CfsSubsetEval();
+		filter.setEvaluator(eval);
+		Ranker search = new Ranker();
+		filter.setSearch(search);
 		filter.setInputFormat(data);
 		Instances newData = Filter.useFilter(data, filter);
+		
+		// Filtro normalizar atributos
+//		Normalize filter = new Normalize();
+//		filter.setInputFormat(data);
+//		Instances newData = Filter.useFilter(data, filter);
 		
 		return newData;
 	}
