@@ -5,7 +5,6 @@ import java.util.Random;
 import weka.classifiers.Evaluation;
 import weka.classifiers.lazy.IBk;
 import weka.classifiers.meta.CVParameterSelection;
-import weka.classifiers.rules.ZeroR;
 import weka.core.Instances;
 
 public class Classifier {

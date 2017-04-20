@@ -5,7 +5,6 @@ import weka.attributeSelection.Ranker;
 import weka.core.Instances;
 import weka.filters.Filter;
 import weka.filters.supervised.attribute.AttributeSelection;
-import weka.filters.unsupervised.attribute.Normalize;
 
 public class Preprocess {
 

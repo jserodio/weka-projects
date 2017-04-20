@@ -18,7 +18,7 @@ public class Classifier {
 
 	public Evaluation randomForest(Instances data, int numTrees) throws Exception{
 		
-		estimador.setNumTrees(numTrees);				
+		estimador.setNumFeatures(numTrees);				
 		evaluator = new Evaluation(data);	
 		Random rand = new Random(10);
 		int folds = 4;
