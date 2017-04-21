@@ -7,7 +7,7 @@ import weka.classifiers.trees.J48;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 
-public class sweepingParameters {
+public class SweepingParameters {
 
 	public static void main(String[] args) throws Exception {
 		
