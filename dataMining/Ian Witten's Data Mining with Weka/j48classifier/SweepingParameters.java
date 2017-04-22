@@ -27,23 +27,44 @@ public class SweepingParameters {
 		
 		Evaluation best = null;
 		Evaluation eval = null;
-		int bestNumber = 1;
+		int bestInst = 1;
+		float bestConf = 0;
 		double max = 0;
 		
-		// at least get 2 leaves with 50% each
-		for (int numInstances=1; numInstances<data.numInstances()/2; numInstances++) {
-			tree.setMinNumObj(numInstances);
-			eval = new Evaluation(data);
-			eval.crossValidateModel(tree, data, 10, new Random(1));
-			if (eval.pctCorrect()>max) {
-				max = eval.pctCorrect();
-				best = eval;
-				bestNumber = numInstances;
+		// declaring loop variables outside the loops
+		int numInstances;
+		float conf;
+		
+		for (conf=(float)0.1; conf<0.5; conf+=(float)0.1) {
+			// at least get 2 leaves with 50% each
+			for (numInstances=1; numInstances<data.numInstances()/2; numInstances++) {
+				System.out.println(conf + "...");
+				tree.setMinNumObj(numInstances);
+				tree.setConfidenceFactor(conf);
+				
+				// build classifier
+				tree.buildClassifier(data);
+				
+				eval = new Evaluation(data);
+				eval.crossValidateModel(tree, data, 10, new Random(1));
+				if (eval.pctCorrect()>max) {
+					max = eval.pctCorrect();
+					best = eval;
+					bestInst = numInstances;
+					bestConf = conf;
+				}
+				System.out.println(numInstances + "...");
 			}
-			System.out.println(numInstances + "...");
 		}
 		
-		System.out.println("# Best number of instances per leaf: " + bestNumber);
+		// build classifier again with the best
+		tree.setMinNumObj(bestInst);
+		tree.setConfidenceFactor(bestConf);
+		tree.buildClassifier(data);
+		
+		System.out.println(tree);
+		System.out.println("# Best MinNumObj: " + bestInst);
+		System.out.println("# Best ConfidenceFactor: " + bestConf);
 		System.out.println(best.toSummaryString("=== Summary ===\n", false));
 		System.out.println(best.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
 		System.out.println(best.toMatrixString("=== Confusion Matrix ===\n"));

@@ -32,7 +32,7 @@ public class Basic {
 		Evaluation eval = new Evaluation(data);
 		eval.crossValidateModel(tree, data, 10, new Random(1));
 		
-		System.out.println("Prunned tree.");
+		System.out.println(tree);
 		System.out.println("=== Stratified cross-validation ===");
 		System.out.println(eval.toSummaryString("=== Summary ===\n", false));
 		System.out.println(eval.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
