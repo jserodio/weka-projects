@@ -15,7 +15,7 @@ public class SweepingHoldOutSeed {
 		// Load train data and set class
 		DataSource source = new DataSource("data/segment-challenge.arff");
 		Instances data = source.getDataSet();
-		final int TOTAL = 10; 
+		final double TOTAL = 9; 
 		
 		if (data.classIndex() == -1) {
 			data.setClassIndex(data.numAttributes() - 1);
@@ -25,13 +25,18 @@ public class SweepingHoldOutSeed {
 		int bestSeed = 0;
 		Evaluation bestEval = null;
 		J48 bestTree = null;
-		int sum = 0;
+		double sum = 0;
 		
 		// loop 10 times.
 		for (int i=1; i<=TOTAL; i++) {
 			
 			System.out.println("Trying seed: " + i);
 			
+			// reset data to randomize from the start
+			data = source.getDataSet();
+			if (data.classIndex() == -1) {
+				data.setClassIndex(data.numAttributes() - 1);
+			}
 			// randomize data before split
 			data.randomize(new Random(i));
 			
@@ -50,6 +55,8 @@ public class SweepingHoldOutSeed {
 			Evaluation eval = new Evaluation(train);
 			eval.evaluateModel(tree, test);
 			
+			System.out.println(eval.toSummaryString());
+			
 			if (eval.pctCorrect() > max) {
 				max = eval.pctCorrect();
 				bestSeed = i;
@@ -58,13 +65,11 @@ public class SweepingHoldOutSeed {
 			}
 			
 			sum += eval.pctCorrect();
-			
-			System.out.println(eval.toSummaryString());
 		}
 		
 		System.out.println(bestTree);
-		System.out.println("Mean: %" + sum/TOTAL);
-		System.out.println("Best seed was: " + bestSeed);
+		System.out.println("Luckiest seed was: " + bestSeed);
+		System.out.println("Sample Mean: " + sum/(TOTAL*100) + ".");
 		System.out.println(bestEval.toSummaryString());
 	}
 
