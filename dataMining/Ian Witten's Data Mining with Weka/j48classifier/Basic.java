@@ -34,9 +34,9 @@ public class Basic {
 		
 		System.out.println(tree);
 		System.out.println("=== Stratified cross-validation ===");
-		System.out.println(eval.toSummaryString("=== Summary ===\n", false));
-		System.out.println(eval.toClassDetailsString("=== Detailed Accuracy By Class ===\n"));
-		System.out.println(eval.toMatrixString("=== Confusion Matrix ===\n"));
+		System.out.println(eval.toSummaryString());
+		System.out.println(eval.toClassDetailsString());
+		System.out.println(eval.toMatrixString());
 	}
 
 }
