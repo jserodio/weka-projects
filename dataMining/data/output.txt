@@ -1,0 +1,39 @@
+
+
+Sum of weights: 1500.0
+Missing values count: 0
+Missing values count: 0
+Instances with 'brickface' class value: 205
+Instances with 'sky' class value: 220
+Instances with 'foliage' class value: 208
+Instances with 'cement' class value: 220
+Instances with 'window' class value: 204
+Instances with 'path' class value: 236
+Instances with 'grass' class value: 207
+
+Summary Relation Name:  segment
+Num Instances:  1500
+Num Attributes: 20
+
+     Name                      Type  Nom  Int Real     Missing      Unique  Dist
+   1 region-centroid-col        Num   0% 100%   0%     0 /  0%     1 /  0%   253 
+   2 region-centroid-row        Num   0% 100%   0%     0 /  0%    16 /  1%   235 
+   3 region-pixel-count         Num   0% 100%   0%     0 /  0%     0 /  0%     1 
+   4 short-line-density-5       Num   0%  87%  13%     0 /  0%     1 /  0%     4 
+   5 short-line-density-2       Num   0%  96%   4%     0 /  0%     0 /  0%     3 
+   6 vedge-mean                 Num   0%   6%  94%     0 /  0%    72 /  5%   201 
+   7 vegde-sd                   Num   0%   2%  98%     0 /  0%   529 / 35%   809 
+   8 hedge-mean                 Num   0%   8%  92%     0 /  0%    92 /  6%   238 
+   9 hedge-sd                   Num   0%   2%  98%     0 /  0%   601 / 40%   886 
+  10 intensity-mean             Num   0%   6%  94%     0 /  0%   659 / 44%   983 
+  11 rawred-mean                Num   0%  17%  83%     0 /  0%   249 / 17%   585 
+  12 rawblue-mean               Num   0%  14%  86%     0 /  0%   292 / 19%   675 
+  13 rawgreen-mean              Num   0%  14%  86%     0 /  0%   260 / 17%   586 
+  14 exred-mean                 Num   0%  12%  88%     0 /  0%    83 /  6%   384 
+  15 exblue-mean                Num   0%  12%  88%     0 /  0%   168 / 11%   562 
+  16 exgreen-mean               Num   0%  11%  89%     0 /  0%    76 /  5%   349 
+  17 value-mean                 Num   0%  13%  87%     0 /  0%   295 / 20%   681 
+  18 saturation-mean            Num   0%   5%  95%     0 /  0%  1174 / 78%  1287 
+  19 hue-mean                   Num   0%   2%  98%     0 /  0%  1195 / 80%  1307 
+  20 class                      Nom 100%   0%   0%     0 /  0%     0 /  0%     7 
+
