@@ -16,7 +16,7 @@ public class SweepKnn {
 
 	public static void main(String[] args) throws Exception {
 		
-		DataSource source = new DataSource("data/balance-scale.arff");
+		DataSource source = new DataSource("data/weather.nominal.arff");
 		Instances data = source.getDataSet();
 		int d,w;
 

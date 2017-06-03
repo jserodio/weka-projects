@@ -1,0 +1,60 @@
+Min FPR found: 0.2968253968253968
+Seed: 10
+More Info: Random forest of 1 trees, each constructed while considering 3 random features.
+Out of bag error: 0.4286
+
+> Sweeping parameters found this:
+Random forest of 1 trees, each constructed while considering 3 random features.
+Out of bag error: 0.4286
+
+
+
+Correctly Classified Instances          11               78.5714 %
+Incorrectly Classified Instances         3               21.4286 %
+Kappa statistic                          0.5116
+Mean absolute error                      0.2411
+Root mean squared error                  0.4736
+Relative absolute error                 50.625  %
+Root relative squared error             96.0012 %
+Coverage of cases (0.95 level)          78.5714 %
+Mean rel. region size (0.95 level)      53.5714 %
+Total Number of Instances               14     
+
+<<<<<<<<<<<<<<<<<<<<<<<
+
+> Hold out
+Random forest of 100 trees, each constructed while considering 3 random features.
+Out of bag error: 0.5
+
+
+
+Correctly Classified Instances           4               80      %
+Incorrectly Classified Instances         1               20      %
+Kappa statistic                          0.5455
+Mean absolute error                      0.4106
+Root mean squared error                  0.4339
+Relative absolute error                 86.8647 %
+Root relative squared error             88.3259 %
+Coverage of cases (0.95 level)         100      %
+Mean rel. region size (0.95 level)     100      %
+Total Number of Instances                5     
+
+<<<<<<<<<<<<<<<<<<<<<<<
+
+
+> Test on the training set
+Random forest of 100 trees, each constructed while considering 3 random features.
+Out of bag error: 0.3846
+
+
+
+Correctly Classified Instances          14              100      %
+Incorrectly Classified Instances         0                0      %
+Kappa statistic                          1     
+Mean absolute error                      0.1566
+Root mean squared error                  0.1772
+Relative absolute error                 33.7212 %
+Root relative squared error             36.9599 %
+Coverage of cases (0.95 level)         100      %
+Mean rel. region size (0.95 level)      96.4286 %
+Total Number of Instances               14     
