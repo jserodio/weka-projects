@@ -1,10 +1,9 @@
 package filters;
 
-import java.io.File;
-
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import weka.core.Instances;
 import weka.core.Utils;
-import weka.core.converters.ArffSaver;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.unsupervised.instance.RemoveWithValues;
@@ -31,7 +30,7 @@ public class Basic {
 		
 		RemoveWithValues remV = new RemoveWithValues();
 		
-		String[] options = Utils.splitOptions("-C 3 -L 1");
+		String[] options = Utils.splitOptions("-S 0.0 -C 3 -L 1");
 		remV.setOptions(options);
 		remV.setInputFormat(data);
 		
@@ -39,11 +38,7 @@ public class Basic {
 		
 		System.out.println("Number of instances: " + filteredData.numInstances());
 		
-		ArffSaver saver = new ArffSaver();
-		saver.setInstances(filteredData);
-		saver.setFile(new File("./data/filtered.arff"));
-		//saver.setDestination(new File("./data/filtered.arff"));   // **not** necessary in 3.5.4 and later
-		saver.writeBatch();
+		Files.write(Paths.get("data/weather.nominal.withoutHighHumidity.arff"), filteredData.toString().getBytes());
 	}
 
 }

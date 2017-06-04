@@ -1,5 +1,8 @@
 package attributeSelection;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import weka.attributeSelection.BestFirst;
 import weka.attributeSelection.CfsSubsetEval;
 import weka.core.Instances;
@@ -36,6 +39,8 @@ public class Main {
 		System.out.println("Number of attributes after: " + newData.numAttributes());
 		for (int i=0; i<newData.numAttributes(); i++)
 			System.out.println(newData.attribute(i).name());
+		
+		Files.write(Paths.get("data/weather.nominal.filtered.arff"), newData.toString().getBytes());
 	}
 
 }

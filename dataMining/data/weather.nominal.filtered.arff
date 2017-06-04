@@ -1,0 +1,21 @@
+@relation 'weather.symbolic-weka.filters.supervised.attribute.AttributeSelection-Eweka.attributeSelection.CfsSubsetEval -P 1 -E 1-Sweka.attributeSelection.BestFirst -D 1 -N 5'
+
+@attribute outlook {sunny,overcast,rainy}
+@attribute humidity {high,normal}
+@attribute play {yes,no}
+
+@data
+sunny,high,no
+sunny,high,no
+overcast,high,yes
+rainy,high,yes
+rainy,normal,yes
+rainy,normal,no
+overcast,normal,yes
+sunny,high,no
+sunny,normal,yes
+rainy,normal,yes
+sunny,normal,yes
+overcast,high,yes
+overcast,normal,yes
+rainy,high,no
