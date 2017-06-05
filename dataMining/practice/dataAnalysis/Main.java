@@ -43,8 +43,6 @@ public class Main {
 				"\n\n" 
 				//"Number of attributes: " + data.numAttributes() + '\n'
 				//+ "Number of instances: " + data.numInstances() + '\n'
-				+ "Sum of weights: " + data.sumOfWeights() + '\n'
-				+ "Missing values count: " + missingValues + '\n'
 				+ "Missing values count: " + missingValues + '\n'
 				+	"Instances with 'brickface' class value: " + brickfaceCount + '\n'
 				+	"Instances with 'sky' class value: " + skyCount + '\n'

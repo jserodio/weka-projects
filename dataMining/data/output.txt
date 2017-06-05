@@ -1,39 +1,105 @@
+Data info: 
+ Missing Value count: 0
+
+ Baseline:
+Naive Bayes Classifier
+
+                  Class
+Attribute             L      B      R
+                 (0.46) (0.08) (0.46)
+======================================
+left-weight
+  mean            3.6111 2.9388 2.3993
+  std. dev.       1.2254 1.4056 1.3295
+  weight sum         288     49    288
+  precision            1      1      1
+
+left-distance
+  mean            3.6111 2.9388 2.3993
+  std. dev.       1.2254 1.4056 1.3295
+  weight sum         288     49    288
+  precision            1      1      1
+
+right-weight
+  mean            2.3993 2.9388 3.6111
+  std. dev.       1.3295 1.4056 1.2254
+  weight sum         288     49    288
+  precision            1      1      1
+
+right-distance
+  mean            2.3993 2.9388 3.6111
+  std. dev.       1.3295 1.4056 1.2254
+  weight sum         288     49    288
+  precision            1      1      1
 
 
-Sum of weights: 1500.0
-Missing values count: 0
-Missing values count: 0
-Instances with 'brickface' class value: 205
-Instances with 'sky' class value: 220
-Instances with 'foliage' class value: 208
-Instances with 'cement' class value: 220
-Instances with 'window' class value: 204
-Instances with 'path' class value: 236
-Instances with 'grass' class value: 207
 
-Summary Relation Name:  segment
-Num Instances:  1500
-Num Attributes: 20
+Correctly Classified Instances         568               90.88   %
+Incorrectly Classified Instances        57                9.12   %
+Kappa statistic                          0.8309
+Mean absolute error                      0.2091
+Root mean squared error                  0.2742
+Relative absolute error                 55.0688 %
+Root relative squared error             62.9578 %
+Coverage of cases (0.95 level)         100      %
+Mean rel. region size (0.95 level)      93.92   %
+Total Number of Instances              625     
 
-     Name                      Type  Nom  Int Real     Missing      Unique  Dist
-   1 region-centroid-col        Num   0% 100%   0%     0 /  0%     1 /  0%   253 
-   2 region-centroid-row        Num   0% 100%   0%     0 /  0%    16 /  1%   235 
-   3 region-pixel-count         Num   0% 100%   0%     0 /  0%     0 /  0%     1 
-   4 short-line-density-5       Num   0%  87%  13%     0 /  0%     1 /  0%     4 
-   5 short-line-density-2       Num   0%  96%   4%     0 /  0%     0 /  0%     3 
-   6 vedge-mean                 Num   0%   6%  94%     0 /  0%    72 /  5%   201 
-   7 vegde-sd                   Num   0%   2%  98%     0 /  0%   529 / 35%   809 
-   8 hedge-mean                 Num   0%   8%  92%     0 /  0%    92 /  6%   238 
-   9 hedge-sd                   Num   0%   2%  98%     0 /  0%   601 / 40%   886 
-  10 intensity-mean             Num   0%   6%  94%     0 /  0%   659 / 44%   983 
-  11 rawred-mean                Num   0%  17%  83%     0 /  0%   249 / 17%   585 
-  12 rawblue-mean               Num   0%  14%  86%     0 /  0%   292 / 19%   675 
-  13 rawgreen-mean              Num   0%  14%  86%     0 /  0%   260 / 17%   586 
-  14 exred-mean                 Num   0%  12%  88%     0 /  0%    83 /  6%   384 
-  15 exblue-mean                Num   0%  12%  88%     0 /  0%   168 / 11%   562 
-  16 exgreen-mean               Num   0%  11%  89%     0 /  0%    76 /  5%   349 
-  17 value-mean                 Num   0%  13%  87%     0 /  0%   295 / 20%   681 
-  18 saturation-mean            Num   0%   5%  95%     0 /  0%  1174 / 78%  1287 
-  19 hue-mean                   Num   0%   2%  98%     0 /  0%  1195 / 80%  1307 
-  20 class                      Nom 100%   0%   0%     0 /  0%     0 /  0%     7 
 
+10-Fold Cross Validation:
+
+Correctly Classified Instances         565               90.4    %
+Incorrectly Classified Instances        60                9.6    %
+Kappa statistic                          0.822 
+Mean absolute error                      0.2129
+Root mean squared error                  0.2793
+Relative absolute error                 56.0456 %
+Root relative squared error             64.1096 %
+Coverage of cases (0.95 level)         100      %
+Mean rel. region size (0.95 level)      93.1733 %
+Total Number of Instances              625     
+
+
+Hold Out 70% for Training and 30% for Testing:
+Naive Bayes Classifier
+
+                  Class
+Attribute             L      B      R
+                 (0.46) (0.08) (0.46)
+======================================
+left-weight
+  mean            3.5622 3.0303 2.4755
+  std. dev.       1.2247 1.3593   1.37
+  weight sum         201     33    204
+  precision            1      1      1
+
+left-distance
+  mean            3.6169 2.8788 2.3431
+  std. dev.       1.2207 1.3429 1.2947
+  weight sum         201     33    204
+  precision            1      1      1
+
+right-weight
+  mean            2.2836 2.9394  3.701
+  std. dev.       1.2829 1.4342 1.2342
+  weight sum         201     33    204
+  precision            1      1      1
+
+right-distance
+  mean             2.408      3 3.6078
+  std. dev.       1.3093 1.3027  1.234
+  weight sum         201     33    204
+  precision            1      1      1
+
+
+
+Correctly Classified Instances         162               86.631  %
+Incorrectly Classified Instances        25               13.369  %
+Kappa statistic                          0.7536
+Mean absolute error                      0.224 
+Root mean squared error                  0.2939
+Relative absolute error                 58.7924 %
+Root relative squared error             67.1321 %
+Coverage of cases (0.95 level)         100      %
+Mean rel. region size (0.95 level)      92.6916 %
+Total Number of Instances              187     
